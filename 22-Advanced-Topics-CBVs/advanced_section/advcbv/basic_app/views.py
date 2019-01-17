@@ -1,15 +1,23 @@
 from django.shortcuts import render
 
-from django.views.generic import View, TemplateView
+from django.views.generic import View, TemplateView, ListView, DetailView
+from . import models
 # from django.http import HttpResponse
 
-class IndexView(TemplateView):
-    template_name = 'index.html'
+class SchoolListView(ListView):
+    model = models.School
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['injectme'] = 'Basic Injaction'
-        return context
+class SchoolDetailsView(DetailView):
+    model = models.School
+
+
+# class IndexView(TemplateView):
+#     template_name = 'index.html'
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['injectme'] = 'Basic Injaction'
+#         return context
 
 # class CBView(View):
 #     def get(self, request):
