@@ -6,12 +6,19 @@
     <h1>Welcome to the school detail Page</h1>
     <h2>School details: </h2>
     <p>Name: {{ school_detail.name }}</p>
-    <p>Principle: {{ school_detail.principle }}</p>
+    <p>Principle: {{ school_detail.principal }}</p>
     <p>Location: {{ school_detail.location }}</p>
 
     <h3>Students: </h3>
     {% for student in school_detail.students.all %}
         <p>{{ student.name }} who is {{ student.age }} years old.</p>
     {% endfor %}
+
+    <div>
+        
+        <a class="btn btn-warning" href="{% url 'basic_app:update' pk=school_detail.pk %}" role="button">Updat</a>
+        <a class="btn btn-warning" href="{% url 'basic_app:delete' pk=school_detail.pk %}" role="button">Delete</a>
+        
+    </div>
 </div>
 {% endblock %}
