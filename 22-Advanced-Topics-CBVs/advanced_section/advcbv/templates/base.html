@@ -19,6 +19,19 @@
     <![endif]-->
   </head>
   <body>
+        
+    <nav class="navbar navbar-default navbar-top" role="navigation">
+      <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+      <ul class="nav navbar-nav">
+          <li class="">
+              <a href="{% url 'admin:index' %}">Admin</a>
+          </li>
+          <li>
+              <a class="navbar-brand" href="{% url 'basic_app:list' %}">Schools</a>
+          </li>
+      </ul>
+    </nav>
+      
     <div class="container">
         {% block body_block %}{% endblock %}
     </div>

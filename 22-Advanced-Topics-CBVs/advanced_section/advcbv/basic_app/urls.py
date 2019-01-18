@@ -15,8 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from django.conf.urls import url
+from basic_app import views
+
+app_name = 'basic_app'
 
 urlpatterns = [
-    
+    path('', views.SchoolListView.as_view(), name='list'),
+    path('<int:pk>/', views.SchoolDetailsView.as_view(), name='details'),
+    # url(r'^(?P<pk>\d+)/$', views.SchoolDetailsView.as_view(), name='details'),
+    # url(r'^create/$', views.SchoolCreateView.as_view(), name='school-create'),
+    # url(r'^update/(?P<pk>\d+)/$', views.SchoolUpdateView.as_view(), name='school-update'),
+    # url(r'^delete/ (?P<pk>\d+)/$', views.SchoolDeleteView.as_view(), name='school-delete'),
 ]
+
