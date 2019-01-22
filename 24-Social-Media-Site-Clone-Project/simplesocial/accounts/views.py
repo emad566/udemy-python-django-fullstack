@@ -7,12 +7,20 @@ from . import forms
 
 
 # Create your views here.
+
+
 class IndexView(TemplateView):
     template_name = 'index.html'
 
+class TestPage(TemplateView):
+    template_name = 'test.html'
+
+class ThanksPage(TemplateView):
+    template_name = 'thanks.html'
+
 class SignUp(CreateView):
     form_class = forms.UserCreateForm
-
+    
     success_url = reverse_lazy('login')
-    template_name = 'accounts/signuphtml'
+    template_name = 'accounts/signup.html'
 
