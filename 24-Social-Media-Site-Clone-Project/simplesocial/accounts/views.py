@@ -9,7 +9,7 @@ from . import forms
 # Create your views here.
 
 
-class IndexView(TemplateView):
+class HomePage(TemplateView):
     template_name = 'index.html'
 
 class TestPage(TemplateView):

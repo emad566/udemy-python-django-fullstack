@@ -9,4 +9,4 @@ class UserCreateForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].label = 'Desplay Name'
-        self.fields['Email'].label = 'Email Address'
+        self.fields['email'].label = 'Email Address'
